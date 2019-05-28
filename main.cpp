@@ -1,6 +1,11 @@
 /*
 	=====DO AN KY THUAT LAP TRINH===
 	CHUONG TRINH: QUAN LY THU VIEN
+	Member : 
+		+ Nguyen Van Hao
+		 + Le Quoc Hoa
+		 + Phan Luong Phuc
+		+ Huynh Do Vuong
 */
 #include"PhieuMuon.h"
 #include"BanDoc.h"
@@ -64,7 +69,7 @@ int main()
 		nhapDS(arrSach, nS, fin);
 	}else
 	{
-		cout << "mo file khong thanh cong" << endl;
+		cout << "Mo file khong thanh cong!" << endl;
 	}
 	//mo file Ban doc
 	ifstream sin;
@@ -75,15 +80,15 @@ int main()
 		nhapDSUser(arrB, nb,sin);
 	}else
 	{
-		cout << "mo file khong thanh cong" << endl;
+		cout << "Mo file khong thanh cong!" << endl;
 	}
 	
 	int chon;
 	setColor(10);
 	cout << "\t\tChuong Trinh Quan Li Phieu Muon \n";
-	cout << "1_In ra thong tin sach trong thu vien " << endl;
-	cout << "2_Tim kiem va in ra chi tiet sach thong qua tua de" << endl;
-	cout << "3_Tim kiem va in ra chi tiet ban doc thong qua ma ban doc" << endl;
+	cout << "\t1_In ra thong tin sach trong thu vien " << endl;
+	cout << "\t2_Tim kiem va in ra chi tiet sach thong qua tua de" << endl;
+	cout << "\t3_Tim kiem va in ra chi tiet ban doc thong qua ma ban doc" << endl;
 	setColor(14);
 	cout << "Quan ly, bao gom:" << endl;
 	setColor(7);
@@ -103,7 +108,7 @@ int main()
 	case 2:
 		{
 			string nKeyTuaDe;
-			cout<<"Nhap vao ten tua de can tim ";
+			cout<<"Nhap vao ten tua de can tim: ";
 			cin>> nKeyTuaDe;
 			TimKiemVaHienThi(arrSach,nS,nKeyTuaDe);
 			break;
@@ -118,16 +123,19 @@ int main()
 	case 4:
 		{
 			int maTruyCap;
+			setColor(11);
 			cout << "Nhap ma truy cap: ";
+			setColor(7);
 			cin >> maTruyCap;
 			if (maTruyCap == 1234)
 			{
-				cout << "1_Tao phieu muon moi va in ra file" << endl;
-				cout << "2_Them Sach vao danh sach sach " << endl;
-				cout << "3_Them ban doc" << endl;
+				cout << "\tQuan Li: \n";
+				cout << "\t\t1_Tao phieu muon moi va in ra file" << endl;
+				cout << "\t\t2_Them Sach vao danh sach sach " << endl;
+				cout << "\t\t3_Them ban doc" << endl;
 				
-				cout << "4_Thong ke so sach da muon" << endl;
-				cout << "5_Thong ke so luong sach con lai trong thu vien " << endl;
+				cout << "\t\t4_Thong ke so sach da muon" << endl;
+				cout << "\t\t5_Thong ke so luong sach con lai trong thu vien " << endl;
 				int chon1;
 				setColor(12);
 				cout << "Moi chon 1 || 2 || 3 || 4 || 5 : ";
@@ -152,12 +160,12 @@ int main()
 					}
 				case 4:
 					{
-						cout << "so luong sach da muon la:" << TongsoLuongSachDaMuon(arrSach, nS) << endl;
+						cout << "So luong sach da muon la: " << TongsoLuongSachDaMuon(arrSach, nS) << endl;
 						break;
 					}
 				case 5:
 					{
-						cout << "So sach con lai trong thu vien la:" << TongsoLuongSachCL(arrSach, nS) << endl;
+						cout << "So sach con lai trong thu vien la: " << TongsoLuongSachCL(arrSach,nS) << endl;
 						break;
 					}
 				}
@@ -168,7 +176,6 @@ int main()
 				break;
 			}
 		}
-
 	default:
 		return 0;
 	}
@@ -237,23 +244,29 @@ void nhapUser()
 	string maBanDoc;
 	string Khoa;
 	string hoTen;
-	cout << "Nhap ma Ban Doc :" ;
+	fout << endl;
+	cout << "Nhap ma Ban Doc: " ;
 	cin >> maBanDoc;
-	cout << "Nhap khoa";
+	cout << "Nhap khoa: ";
 	cin >> Khoa;
-	cout << "Nhap ho Ten :" ;
-	fflush(stdin);
+	cout << "Nhap ho Ten: " ;
+	rewind(stdin);
 	getline(cin,hoTen);
+
 	fout << maBanDoc << endl;
 	fout << Khoa << endl;
 	fout << hoTen << endl;
 	int chon;
-	cout << "1.Sinh vien " << endl << "2.Giao Vien" << endl;
+	setColor(14);
+	cout << "\t1.Sinh vien " << endl;
+	cout << "\t2.Giao Vien " << endl;
+	setColor(7);
 	cout << "Nhap vao lua chon: ";
 	cin >> chon;
 	if(chon == 1)
 	{
 		int KhoaHoc;
+		rewind(stdin);
 		cout << "Nhap vao khoa hoc: ";
 		cin >> KhoaHoc;
 		fout << KhoaHoc << endl;
@@ -263,7 +276,7 @@ void nhapUser()
 		string diaChi;
 		string SDT;
 		cout << "Nhap dia chi: ";
-		fflush(stdin);
+		rewind(stdin);
 		getline(cin,diaChi);
 		cout << "Nhap vao SDT: ";
 		cin >> SDT;
@@ -307,7 +320,7 @@ void nhapDS(CSach* arrSach[], int &nS,ifstream &fin)
 //xuat danh sach sach ra man hinh
 void xuatDS(CSach* arrSach[], int &nS)
 {
-	cout<<" Trong thu vien gom :" << nS << "cuon sach "<< endl;
+	cout<<"Trong thu vien gom: " << nS << "cuon sach "<< endl;
 	for(int i = 0; i < nS ; i++)
 	{
 		arrSach[i]->xuat();
@@ -326,7 +339,7 @@ void TimKiemVaHienThi(CSach* arrSach[],int &nS , string nKeyTuaDe)
 		}
 		else
 		{
-			cout<< "Khong tim thay sach";
+			cout<< "Khong tim thay sach!";
 		}
 	}
 }
@@ -365,7 +378,7 @@ void nhapDSUser(CBanDoc* arrB[], int &nb, ifstream &sin)
 //xuat thong tin user
 void xuatUser(CBanDoc* arrB[], int &nb)
 {
-	cout<<"Danh sach gom " << nb << endl;
+	cout<<"Danh sach gom: " << nb << endl;
 	
 	for(int i = 0; i < nb; i++)
 	{
@@ -377,7 +390,7 @@ void xuatUser(CBanDoc* arrB[], int &nb)
 //tim kiem ban doc 
 void TimKiemBanDoc(CBanDoc* arrB[], int &nb,string KeyMaBD)
 {
-	cout <<"Nhap vao ma ban doc can tim ";
+	cout <<"Nhap vao ma ban doc can tim: ";
 	cin >> KeyMaBD;
 
 	for (int i = 0; i < nb ; i++)
@@ -449,7 +462,7 @@ void nhapPhieuMuon (CBanDoc* arrB[], int &nb, CPhieuMuon* arrPM[], CSach* arrSac
 		nhapDS(arrSach, nS, fin);
 	}else
 	{
-		cout << "mo file khong thanh cong" << endl;
+		cout << "Mo file khong thanh cong!" << endl;
 	}
 
 	ifstream sin;
@@ -460,7 +473,7 @@ void nhapPhieuMuon (CBanDoc* arrB[], int &nb, CPhieuMuon* arrPM[], CSach* arrSac
 		nhapDSUser(arrB, nb,sin);
 	}else
 	{
-		cout << "mo file khong thanh cong" << endl;
+		cout << "Mo file khong thanh cong!" << endl;
 	}
 
 	int soPhieuMuon = 0;
@@ -510,16 +523,14 @@ void nhapPhieuMuon (CBanDoc* arrB[], int &nb, CPhieuMuon* arrPM[], CSach* arrSac
 	}
 		ofstream fout;
 		fout.open("PhieuMuon.txt",ios::app);
-		fout <<"so phieu muon " << soPhieuMuon <<endl;
-		fout <<"Ma nguoi muon " << keyPerson << endl;
-		fout <<"Ma Sach " << maSachMuon << endl;
-		fout <<"Tinh trang :" << tinhTrang << endl;
+		fout <<"So phieu muon: " << soPhieuMuon <<endl;
+		fout <<"Ma nguoi muon: " << keyPerson << endl;
+		fout <<"Ma Sach: " << maSachMuon << endl;
+		fout <<"Tinh trang: " << tinhTrang << endl;
 		getNgayMuon();
 		getNgayTra();
 		fout.close();
 }
-
-
 //
 //	
 //}
@@ -528,7 +539,7 @@ void nhapPhieuMuon (CBanDoc* arrB[], int &nb, CPhieuMuon* arrPM[], CSach* arrSac
 void xuatPhieuMuon(CBanDoc* arrB[], int nb, CPhieuMuon* arrPM[])
 {
 	
-	cout << "===>Thong tin phieu muon" << endl;
+	cout << "===>Thong tin phieu muon: " << endl;
 	for (int i = 0; i < nb; i++)
 	{
 		arrPM[i]->xuat();
