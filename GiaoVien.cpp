@@ -15,6 +15,4 @@ void CGiaoVien::xuat()
 	cout << "Dia Chi:" << m_diaChi<< endl;
 	cout << "SDT :" << m_SDT << endl;
 }
-CGiaoVien::~CGiaoVien(void)
-{
-}
+
