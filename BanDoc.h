@@ -1,22 +1,19 @@
-#pragma once
-#include "DaTe.h"
-class DaTe;
-class BanDoc
+#ifndef BANDOC_H
+#define BANDOC_H
+#include<iostream>
+#include<string>
+using namespace std;
+class CBanDoc
 {
-protected:
-	string sMaBD, sHoTen, sKhoa;
-	DaTe xNgayDK;
 public:
-	friend DaTe;
-	virtual void output(){};
-	string getSoBD();
-	void xuatBD();
-	BanDoc(string sMaBD = "", string sHoTen = "", string sKhoa = "", int nNgay = 0, int nThang = 0, int nNam = 0): xNgayDK(nNgay,nThang,nNam)
-	{
-		this->sMaBD = sMaBD;
-		this->sHoTen = sHoTen;
-		this->sKhoa = sKhoa;
-	}
-	~BanDoc(void){};
+	CBanDoc(void);
+	~CBanDoc(void);
+	CBanDoc(string maBanDoc, string Khoa, string hoTen);
+	virtual void xuat();
+	string getmaBanDoc();
+private:
+	string m_maBanDoc;
+	string m_Khoa;
+	string m_hoTen;
 };
-
+#endif
