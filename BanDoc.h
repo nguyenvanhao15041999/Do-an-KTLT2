@@ -7,7 +7,7 @@ class CBanDoc
 {
 public:
 	CBanDoc(void);
-	~CBanDoc(void);
+	~CBanDoc(void){}
 	CBanDoc(string maBanDoc, string Khoa, string hoTen);
 	virtual void xuat();
 	string getmaBanDoc();

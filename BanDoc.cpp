@@ -21,6 +21,3 @@ CBanDoc::CBanDoc(string maBanDoc, string Khoa ,string hoTen)
  {
 	 return m_maBanDoc;
  }
-CBanDoc::~CBanDoc(void)
-{
-}
