@@ -86,9 +86,9 @@ int main()
 	int chon;
 	setColor(10);
 	cout << "\t\tChuong Trinh Quan Li Phieu Muon \n";
-	cout << "\t1_In ra thong tin sach trong thu vien " << endl;
-	cout << "\t2_Tim kiem va in ra chi tiet sach thong qua tua de" << endl;
-	cout << "\t3_Tim kiem va in ra chi tiet ban doc thong qua ma ban doc" << endl;
+	cout << "1_In ra thong tin sach trong thu vien " << endl;
+	cout << "2_Tim kiem va in ra chi tiet sach thong qua tua de" << endl;
+	cout << "3_Tim kiem va in ra chi tiet ban doc thong qua ma ban doc" << endl;
 	setColor(14);
 	cout << "Quan ly, bao gom:" << endl;
 	setColor(7);
