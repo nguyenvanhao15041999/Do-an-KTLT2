@@ -24,6 +24,3 @@ void CPhieuMuon::xuat()
 	cout<<" ma ban doc :" << m_nguoiMuon.getmaBanDoc() << endl;
 	cout<< " Tinh Trang :" << m_tinhTrang << endl;
 }
-CPhieuMuon::~CPhieuMuon(void)
-{
-}
