@@ -14,6 +14,3 @@ void CDate::xuat()
 {
 	cout<<"Ngay :" << m_ngay <<" Thang :" << m_thang << " NAM " << m_nam <<endl;
 }
-CDate::~CDate(void)
-{
-}

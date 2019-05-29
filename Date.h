@@ -5,7 +5,7 @@ class CDate
 {
 public:
 	CDate(void);
-	~CDate(void);
+	~CDate(void){}
 	CDate(int ngay,int thang,int nam);
 	void xuat();
 private:
