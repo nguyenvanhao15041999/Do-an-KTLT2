@@ -14,6 +14,3 @@ void CSinhVien::xuat()
 	CBanDoc::xuat();
 	cout<<"Khoa Hoc" << m_KhoaHoc << endl;
 }
-CSinhVien::~CSinhVien(void)
-{
-}
