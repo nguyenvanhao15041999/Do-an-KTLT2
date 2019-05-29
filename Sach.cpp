@@ -43,6 +43,3 @@ string CSach::getmaSach()
 	return m_maSach;
 }
 
-CSach::~CSach(void)
-{
-}
