@@ -5,7 +5,7 @@ class CSinhVien :
 	public CBanDoc
 {
 public:
-	CSinhVien(void);
+	CSinhVien(void){}
 	~CSinhVien(void){}
 	CSinhVien(string maBanDoc, string Khoa, string hoTen,string KhoaHoc);
 	 void xuat();
@@ -13,5 +13,4 @@ private:
 	string m_KhoaHoc;
 	
 };
-
 #endif

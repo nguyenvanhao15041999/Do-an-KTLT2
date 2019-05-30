@@ -7,6 +7,7 @@
 		 + Phan Luong Phuc
 		+ Huynh Do Vuong
 */
+#define _CRT_SECURE_NO_WARNINGS
 #include"PhieuMuon.h"
 #include"BanDoc.h"
 #include"Sach.h"
@@ -15,7 +16,9 @@
 #include<fstream>
 #include<string.h>
 #include <ctime>
+
 #include <Windows.h>
+
 
 void setColor(int i)
 {
@@ -86,14 +89,14 @@ int main()
 	int chon;
 	setColor(10);
 	cout << "\t\tChuong Trinh Quan Li Phieu Muon \n";
-	cout << "1_In ra thong tin sach trong thu vien " << endl;
-	cout << "2_Tim kiem va in ra chi tiet sach thong qua tua de" << endl;
-	cout << "3_Tim kiem va in ra chi tiet ban doc thong qua ma ban doc" << endl;
+	cout << "1_In ra thong tin sach trong thu vien. " << endl;
+	cout << "2_Tim kiem va in ra chi tiet sach thong qua tua de." << endl;
+	cout << "3_Tim kiem va in ra chi tiet ban doc thong qua ma ban doc. " << endl;
 	setColor(14);
 	cout << "Quan ly, bao gom:" << endl;
 	setColor(7);
-	cout << "\t 4_Chuc Nang Quan Li" << endl;
-	cout << "\t 5_Thoat" << endl;
+	cout << "\t 4_Chuc Nang Quan Li." << endl;
+	cout << "\t 5_Thoat." << endl;
 	setColor(12);
 	cout << "Moi chon 1 || 2 || 3 || 4 : ";
 	setColor(7);
@@ -130,12 +133,12 @@ int main()
 			if (maTruyCap == 1234)
 			{
 				cout << "\tQuan Li: \n";
-				cout << "\t\t1_Tao phieu muon moi va in ra file" << endl;
-				cout << "\t\t2_Them Sach vao danh sach sach " << endl;
-				cout << "\t\t3_Them ban doc" << endl;
+				cout << "\t 1_Tao phieu muon moi va in ra file." << endl;
+				cout << "\t 2_Them Sach vao danh sach sach. " << endl;
+				cout << "\t 3_Them ban doc." << endl;
 				
-				cout << "\t\t4_Thong ke so sach da muon" << endl;
-				cout << "\t\t5_Thong ke so luong sach con lai trong thu vien " << endl;
+				cout << "\t 4_Thong ke so sach da muon." << endl;
+				cout << "\t 5_Thong ke so luong sach con lai trong thu vien. " << endl;
 				int chon1;
 				setColor(12);
 				cout << "Moi chon 1 || 2 || 3 || 4 || 5 : ";
@@ -216,7 +219,7 @@ void  nhapSach(CSach* arrSach[], int &nS)
 	cin >> triGia;
 	cout << "Nhap nam Phat hanh: ";
 	cin >> namPH;
-	cout << "Nhap so trang:";
+	cout << "Nhap so trang: ";
 	cin >> soTrang;
 	cout <<" Nhap ngay nhap kho: ";
 	cin >> ngay >> thang >> nam;
@@ -320,7 +323,7 @@ void nhapDS(CSach* arrSach[], int &nS,ifstream &fin)
 //xuat danh sach sach ra man hinh
 void xuatDS(CSach* arrSach[], int &nS)
 {
-	cout<<"Trong thu vien gom: " << nS << "cuon sach "<< endl;
+	cout<<"Trong thu vien gom " << nS << " cuon sach. "<< endl;
 	for(int i = 0; i < nS ; i++)
 	{
 		arrSach[i]->xuat();

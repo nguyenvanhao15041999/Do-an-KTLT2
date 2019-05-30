@@ -7,7 +7,7 @@ using namespace std;
 class CSach
 {
 public:
-	CSach(void);
+	CSach(void){}
 	~CSach(void){}
 	CSach(string maSach,string tuaDe,string tacGia, string NXB,float triGia,int namPH,int soTrang,int ngay,int thang,int nam,int maPM);
 	void xuat();
